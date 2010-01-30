@@ -16,6 +16,9 @@
 		E66EF38B1114B09000E9E26F /* SCMapperUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E66EF38A1114B09000E9E26F /* SCMapperUnitTest.m */; };
 		E66EF3931114DFEF00E9E26F /* SCScale.m in Sources */ = {isa = PBXBuildFile; fileRef = E66EF3921114DFEF00E9E26F /* SCScale.m */; };
 		E66EF3941114DFEF00E9E26F /* SCScale.m in Sources */ = {isa = PBXBuildFile; fileRef = E66EF3921114DFEF00E9E26F /* SCScale.m */; };
+		E66EF3BB1114ED9200E9E26F /* SC2DScale.m in Sources */ = {isa = PBXBuildFile; fileRef = E66EF3BA1114ED9200E9E26F /* SC2DScale.m */; };
+		E66EF3BC1114ED9200E9E26F /* SC2DScale.m in Sources */ = {isa = PBXBuildFile; fileRef = E66EF3BA1114ED9200E9E26F /* SC2DScale.m */; };
+		E66EF3BF1114F0D000E9E26F /* SC2DScaleUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E66EF3BE1114F0D000E9E26F /* SC2DScaleUnitTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,10 @@
 		E66EF38A1114B09000E9E26F /* SCMapperUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMapperUnitTest.m; sourceTree = "<group>"; };
 		E66EF3911114DFEF00E9E26F /* SCScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCScale.h; sourceTree = "<group>"; };
 		E66EF3921114DFEF00E9E26F /* SCScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCScale.m; sourceTree = "<group>"; };
+		E66EF3B91114ED9200E9E26F /* SC2DScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC2DScale.h; sourceTree = "<group>"; };
+		E66EF3BA1114ED9200E9E26F /* SC2DScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SC2DScale.m; sourceTree = "<group>"; };
+		E66EF3BD1114F0D000E9E26F /* SC2DScaleUnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC2DScaleUnitTest.h; sourceTree = "<group>"; };
+		E66EF3BE1114F0D000E9E26F /* SC2DScaleUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SC2DScaleUnitTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +169,8 @@
 				E66EF36D1114976500E9E26F /* SCPlotCanvas.m */,
 				E66EF3911114DFEF00E9E26F /* SCScale.h */,
 				E66EF3921114DFEF00E9E26F /* SCScale.m */,
+				E66EF3B91114ED9200E9E26F /* SC2DScale.h */,
+				E66EF3BA1114ED9200E9E26F /* SC2DScale.m */,
 			);
 			name = SCPlotCanvas;
 			sourceTree = "<group>";
@@ -171,6 +180,8 @@
 			children = (
 				E66EF3891114B09000E9E26F /* SCMapperUnitTest.h */,
 				E66EF38A1114B09000E9E26F /* SCMapperUnitTest.m */,
+				E66EF3BD1114F0D000E9E26F /* SC2DScaleUnitTest.h */,
+				E66EF3BE1114F0D000E9E26F /* SC2DScaleUnitTest.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -279,6 +290,7 @@
 				E66EF3661114948500E9E26F /* Alarm_ClockAppDelegate.m in Sources */,
 				E66EF36E1114976500E9E26F /* SCPlotCanvas.m in Sources */,
 				E66EF3941114DFEF00E9E26F /* SCScale.m in Sources */,
+				E66EF3BC1114ED9200E9E26F /* SC2DScale.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +300,8 @@
 			files = (
 				E66EF38B1114B09000E9E26F /* SCMapperUnitTest.m in Sources */,
 				E66EF3931114DFEF00E9E26F /* SCScale.m in Sources */,
+				E66EF3BB1114ED9200E9E26F /* SC2DScale.m in Sources */,
+				E66EF3BF1114F0D000E9E26F /* SC2DScaleUnitTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
