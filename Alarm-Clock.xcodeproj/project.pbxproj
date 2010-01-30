@@ -12,6 +12,10 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		E66EF3661114948500E9E26F /* Alarm_ClockAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E66EF3651114948500E9E26F /* Alarm_ClockAppDelegate.m */; };
+		E66EF36E1114976500E9E26F /* SCPlotCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = E66EF36D1114976500E9E26F /* SCPlotCanvas.m */; };
+		E66EF38B1114B09000E9E26F /* SCMapperUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E66EF38A1114B09000E9E26F /* SCMapperUnitTest.m */; };
+		E66EF3931114DFEF00E9E26F /* SCScale.m in Sources */ = {isa = PBXBuildFile; fileRef = E66EF3921114DFEF00E9E26F /* SCScale.m */; };
+		E66EF3941114DFEF00E9E26F /* SCScale.m in Sources */ = {isa = PBXBuildFile; fileRef = E66EF3921114DFEF00E9E26F /* SCScale.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,14 @@
 		8D1107320486CEB800E47090 /* Alarm-Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alarm-Clock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66EF3641114948500E9E26F /* Alarm_ClockAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alarm_ClockAppDelegate.h; path = Classes/Alarm_ClockAppDelegate.h; sourceTree = "<group>"; };
 		E66EF3651114948500E9E26F /* Alarm_ClockAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Alarm_ClockAppDelegate.m; path = Classes/Alarm_ClockAppDelegate.m; sourceTree = "<group>"; };
+		E66EF36C1114976500E9E26F /* SCPlotCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPlotCanvas.h; sourceTree = "<group>"; };
+		E66EF36D1114976500E9E26F /* SCPlotCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPlotCanvas.m; sourceTree = "<group>"; };
+		E66EF3821114B00D00E9E26F /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E66EF3831114B00D00E9E26F /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
+		E66EF3891114B09000E9E26F /* SCMapperUnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMapperUnitTest.h; sourceTree = "<group>"; };
+		E66EF38A1114B09000E9E26F /* SCMapperUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMapperUnitTest.m; sourceTree = "<group>"; };
+		E66EF3911114DFEF00E9E26F /* SCScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCScale.h; sourceTree = "<group>"; };
+		E66EF3921114DFEF00E9E26F /* SCScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCScale.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,12 +50,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E66EF37F1114B00D00E9E26F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E66EF36B111496D900E9E26F /* SCPlotCanvas */,
+				E66EF36A1114952900E9E26F /* SCSleepAnalyser */,
+				E66EF369111494EC00E9E26F /* SCRemoteAccelerometer */,
 				E66EF3641114948500E9E26F /* Alarm_ClockAppDelegate.h */,
 				E66EF3651114948500E9E26F /* Alarm_ClockAppDelegate.m */,
 			);
@@ -72,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				8D1107320486CEB800E47090 /* Alarm-Clock.app */,
+				E66EF3821114B00D00E9E26F /* UnitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,11 +102,13 @@
 		29B97314FDCFA39411CA2CEA /* Alarm-Clock */ = {
 			isa = PBXGroup;
 			children = (
+				E66EF3881114B01C00E9E26F /* Tests */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				E66EF3831114B00D00E9E26F /* UnitTests-Info.plist */,
 			);
 			name = "Alarm-Clock";
 			sourceTree = "<group>";
@@ -116,6 +141,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E66EF369111494EC00E9E26F /* SCRemoteAccelerometer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SCRemoteAccelerometer;
+			sourceTree = "<group>";
+		};
+		E66EF36A1114952900E9E26F /* SCSleepAnalyser */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SCSleepAnalyser;
+			sourceTree = "<group>";
+		};
+		E66EF36B111496D900E9E26F /* SCPlotCanvas */ = {
+			isa = PBXGroup;
+			children = (
+				E66EF36C1114976500E9E26F /* SCPlotCanvas.h */,
+				E66EF36D1114976500E9E26F /* SCPlotCanvas.m */,
+				E66EF3911114DFEF00E9E26F /* SCScale.h */,
+				E66EF3921114DFEF00E9E26F /* SCScale.m */,
+			);
+			name = SCPlotCanvas;
+			sourceTree = "<group>";
+		};
+		E66EF3881114B01C00E9E26F /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E66EF3891114B09000E9E26F /* SCMapperUnitTest.h */,
+				E66EF38A1114B09000E9E26F /* SCMapperUnitTest.m */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,11 +196,32 @@
 			productReference = 8D1107320486CEB800E47090 /* Alarm-Clock.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E66EF3811114B00D00E9E26F /* UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E66EF3861114B00E00E9E26F /* Build configuration list for PBXNativeTarget "UnitTests" */;
+			buildPhases = (
+				E66EF37D1114B00D00E9E26F /* Resources */,
+				E66EF37E1114B00D00E9E26F /* Sources */,
+				E66EF37F1114B00D00E9E26F /* Frameworks */,
+				E66EF3801114B00D00E9E26F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UnitTests;
+			productName = UnitTests;
+			productReference = E66EF3821114B00D00E9E26F /* UnitTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = Robert;
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Alarm-Clock" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
@@ -150,6 +230,7 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* Alarm-Clock */,
+				E66EF3811114B00D00E9E26F /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -164,7 +245,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E66EF37D1114B00D00E9E26F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E66EF3801114B00D00E9E26F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D11072C0486CEB800E47090 /* Sources */ = {
@@ -173,6 +277,17 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				E66EF3661114948500E9E26F /* Alarm_ClockAppDelegate.m in Sources */,
+				E66EF36E1114976500E9E26F /* SCPlotCanvas.m in Sources */,
+				E66EF3941114DFEF00E9E26F /* SCScale.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E66EF37E1114B00D00E9E26F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E66EF38B1114B09000E9E26F /* SCMapperUnitTest.m in Sources */,
+				E66EF3931114DFEF00E9E26F /* SCScale.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +370,60 @@
 			};
 			name = Release;
 		};
+		E66EF3841114B00E00E9E26F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "UnitTests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UnitTests;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		E66EF3851114B00E00E9E26F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "UnitTests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UnitTests;
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -272,6 +441,15 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E66EF3861114B00E00E9E26F /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E66EF3841114B00E00E9E26F /* Debug */,
+				E66EF3851114B00E00E9E26F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
