@@ -7,6 +7,7 @@
 //
 
 #import "SCPlotCanvas.h"
+#import "SCGraph.h"
 
 
 @implementation SCPlotCanvas
@@ -22,8 +23,12 @@
 - (void)drawRect:(NSRect)dirtyRect {
 	CGContextRef myContext = [[NSGraphicsContext currentContext] graphicsPort];
 	
-	CGContextSetRGBFillColor (myContext, 0, 0, 0, 1);
-    CGContextFillRect (myContext, dirtyRect);
+	CGContextSetRGBFillColor(myContext, 0, 0, 0, 1);
+    CGContextFillRect(myContext, dirtyRect);
+	
+	SCGraph *graph = [[SCGraph alloc] init];
+	[graph draw: myContext];
+	[graph release];
 }
 
 @end

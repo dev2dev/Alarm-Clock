@@ -19,6 +19,8 @@
 		E66EF3BB1114ED9200E9E26F /* SC2DScale.m in Sources */ = {isa = PBXBuildFile; fileRef = E66EF3BA1114ED9200E9E26F /* SC2DScale.m */; };
 		E66EF3BC1114ED9200E9E26F /* SC2DScale.m in Sources */ = {isa = PBXBuildFile; fileRef = E66EF3BA1114ED9200E9E26F /* SC2DScale.m */; };
 		E66EF3BF1114F0D000E9E26F /* SC2DScaleUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E66EF3BE1114F0D000E9E26F /* SC2DScaleUnitTest.m */; };
+		E66EF3F21114FBA500E9E26F /* SCGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = E66EF3F11114FBA500E9E26F /* SCGraph.m */; };
+		E66EF3FE1115009200E9E26F /* SCGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = E66EF3F11114FBA500E9E26F /* SCGraph.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		E66EF3BA1114ED9200E9E26F /* SC2DScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SC2DScale.m; sourceTree = "<group>"; };
 		E66EF3BD1114F0D000E9E26F /* SC2DScaleUnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC2DScaleUnitTest.h; sourceTree = "<group>"; };
 		E66EF3BE1114F0D000E9E26F /* SC2DScaleUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SC2DScaleUnitTest.m; sourceTree = "<group>"; };
+		E66EF3F01114FBA500E9E26F /* SCGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGraph.h; sourceTree = "<group>"; };
+		E66EF3F11114FBA500E9E26F /* SCGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGraph.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,8 @@
 				E66EF3921114DFEF00E9E26F /* SCScale.m */,
 				E66EF3B91114ED9200E9E26F /* SC2DScale.h */,
 				E66EF3BA1114ED9200E9E26F /* SC2DScale.m */,
+				E66EF3F01114FBA500E9E26F /* SCGraph.h */,
+				E66EF3F11114FBA500E9E26F /* SCGraph.m */,
 			);
 			name = SCPlotCanvas;
 			sourceTree = "<group>";
@@ -291,6 +297,7 @@
 				E66EF36E1114976500E9E26F /* SCPlotCanvas.m in Sources */,
 				E66EF3941114DFEF00E9E26F /* SCScale.m in Sources */,
 				E66EF3BC1114ED9200E9E26F /* SC2DScale.m in Sources */,
+				E66EF3FE1115009200E9E26F /* SCGraph.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +309,7 @@
 				E66EF3931114DFEF00E9E26F /* SCScale.m in Sources */,
 				E66EF3BB1114ED9200E9E26F /* SC2DScale.m in Sources */,
 				E66EF3BF1114F0D000E9E26F /* SC2DScaleUnitTest.m in Sources */,
+				E66EF3F21114FBA500E9E26F /* SCGraph.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
