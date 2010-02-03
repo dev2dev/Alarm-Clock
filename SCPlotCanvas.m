@@ -40,7 +40,7 @@
 	NSRect rect = NSMakeRect(0, 0, [self frame].size.width, [self frame].size.height);
 
 	SC2DScale *scaler = [[[SC2DScale alloc] init] autorelease];
-	[scaler setFromRect:NSMakeRect(0, -1, 1000, 2)];
+	[scaler setFromRect:NSMakeRect(0, -200, 1000, 400)];
 	[scaler setToRect: rect];
 	
 	CGContextRef myContext = [[NSGraphicsContext currentContext] graphicsPort];

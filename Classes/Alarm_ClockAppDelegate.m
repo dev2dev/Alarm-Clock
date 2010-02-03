@@ -21,13 +21,17 @@
 
 @implementation Alarm_ClockAppDelegate
 
-@synthesize window;
+@synthesize window, remoteAccel;
 
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	[self setupGraph];
 	
 	[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(addPoint) userInfo:nil repeats:YES]; 
+	
+	remoteAccel = [[SCRemoteAccelerometer alloc] init];
+	remoteAccel.delegate = self;
+	[remoteAccel startReading];
 }
 
 - (void) dealloc
@@ -43,22 +47,19 @@
 #pragma mark Private Methods
 - (void)setupGraph {
 	graph = [[SCGraph alloc] init];
-	
-	[graph addPoint: NSMakePoint(0, 0.1)];
-	[graph addPoint: NSMakePoint(10, 0.5)];
-	count = 1;
-	
 	[plotCanvas addGraph: graph];
 }
 
-- (void)addPoint {
+
+#pragma mark -
+#pragma mark Remote Accelerometer Delegate Methods
+
+- (void)remoteAccelerometer:(SCRemoteAccelerometer *)remoteAccelerometer didReceiveAcceleration:(float)acceleration
+{
 	count += 1;
 	
-	[graph addPoint: NSMakePoint(count * 10, 0.5)];
+	[graph addPoint: NSMakePoint(count * 10, acceleration)];
 }
-
-
-
 
 
 @end
