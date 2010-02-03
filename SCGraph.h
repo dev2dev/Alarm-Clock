@@ -8,9 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class SC2DScale;
+
 
 @interface SCGraph : NSObject {
 	NSMutableArray *points;
+	
+	SC2DScale *scaler;
 
 }
 
