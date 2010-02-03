@@ -13,20 +13,19 @@
 @implementation SCGraph
 
 @synthesize scaler;
+@synthesize dirty;
 
-
-- (id) init
-{
+- (id) init {
 	self = [super init];
 	if (self != nil) {
-		
 		points = [[NSMutableArray alloc] init]; 
+		dirty = NO;
 	}
+	
 	return self;
 }
 
-- (void) dealloc
-{
+- (void) dealloc {
 	[scaler release];
 	[points release];
 	
@@ -35,9 +34,8 @@
 
 - (void)addPoint: (NSPoint)point {
 	[points addObject:[NSValue valueWithPoint: point]];
+	self.dirty = YES;
 }
-
-
 
 - (void)draw: (CGContextRef) context {
 	CGContextSetRGBStrokeColor(context, 1, 1, 1, 1);
@@ -55,6 +53,9 @@
 	}
 	
 	CGContextStrokePath(context);
+
+	self.dirty = NO;
 }
+
 
 @end

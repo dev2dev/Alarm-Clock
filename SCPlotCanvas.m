@@ -10,6 +10,13 @@
 #import "SCGraph.h"
 #import "SC2DScale.h"
 
+@interface SCPlotCanvas (Private)
+
+- (void)graphChanged;
+
+@end
+
+
 
 @implementation SCPlotCanvas
 
@@ -48,10 +55,34 @@
 }
 
 - (void)addGraph: (SCGraph *)graph {
-	[graphs addObject:graph];
-	[self setNeedsDisplay:YES];
+	[graph addObserver:self forKeyPath:@"dirty" options:(NSKeyValueObservingOptionNew)
+			   context:nil];
+
+	graph.dirty = NO;
+
+	
+	[graphs addObject:graph];	
+	[self graphChanged];
 }
 
+
+#pragma mark -
+#pragma mark Private Methods
+
+- (void)graphChanged {
+	[self setNeedsDisplay:YES];
+
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+					  ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context	{
+	
+	if ([[change valueForKey:@"new"] boolValue] == YES) {
+		[self graphChanged];
+	}
+}
 
 
 @end

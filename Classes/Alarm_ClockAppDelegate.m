@@ -55,7 +55,6 @@
 	count += 1;
 	
 	[graph addPoint: NSMakePoint(count * 10, 0.5)];
-	[plotCanvas setNeedsDisplay:YES];
 }
 
 
