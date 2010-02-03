@@ -12,7 +12,9 @@
 
 
 @interface SCPlotCanvas : NSView {
-	SCGraph *graph;
+	NSMutableArray *graphs;
 }
+
+- (void)addGraph: (SCGraph *)graph;
 
 @end

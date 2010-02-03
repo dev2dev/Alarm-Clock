@@ -16,15 +16,7 @@
 - (id)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        graph = [[SCGraph alloc] init];
-		
-		[graph addPoint: NSMakePoint(0, 0.1)];
-		[graph addPoint: NSMakePoint(10, 0.5)];
-		[graph addPoint: NSMakePoint(20, 0.1)];
-		[graph addPoint: NSMakePoint(30, 0.2)];
-		[graph addPoint: NSMakePoint(40, 0.1)];
-		[graph addPoint: NSMakePoint(50, 0.2)];
-		[graph addPoint: NSMakePoint(60, 0.1)];
+		graphs = [[NSMutableArray alloc] init];
 	}
 
     return self;
@@ -32,7 +24,7 @@
 
 - (void) dealloc
 {
-	[graph release];
+	[graphs release];
 
 	[super dealloc];
 }
@@ -44,14 +36,25 @@
 	[scaler setFromRect:NSMakeRect(0, -1, 60, 2)];
 	[scaler setToRect: rect];
 	
-	graph.scaler = scaler;
-	
 	CGContextRef myContext = [[NSGraphicsContext currentContext] graphicsPort];
 	
 	CGContextSetRGBFillColor(myContext, 0, 0, 0, 1);
     CGContextFillRect(myContext, dirtyRect);
 	
-	[graph draw: myContext];
+	for (SCGraph *graph in graphs) {
+		NSLog(@"graph: %@", graph);
+
+		graph.scaler = scaler;
+		[graph draw: myContext];
+	}
 }
+
+- (void)addGraph: (SCGraph *)graph {
+
+	[graphs addObject:graph];
+	[self setNeedsDisplay:YES];
+}
+
+
 
 @end

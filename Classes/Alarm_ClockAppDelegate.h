@@ -7,9 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+@class SCPlotCanvas;
 
 @interface Alarm_ClockAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
+	
+	IBOutlet SCPlotCanvas *plotCanvas; 
 }
 
 @property (assign) IBOutlet NSWindow *window;
