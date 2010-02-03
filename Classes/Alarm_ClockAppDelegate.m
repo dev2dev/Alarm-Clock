@@ -8,6 +8,7 @@
 
 #import "Alarm_ClockAppDelegate.h"
 #import "SCGraph.h"
+#import "SCPlotCanvas.h"
 
 @interface Alarm_ClockAppDelegate (Private)
 
@@ -25,21 +26,40 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	[self setupGraph];
+	
+	[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(addPoint) userInfo:nil repeats:YES]; 
 }
 
+- (void) dealloc
+{
+	[graph release];
+	[plotCanvas release];
+	
+	[super dealloc];
+}
+
+
+#pragma mark -
+#pragma mark Private Methods
 - (void)setupGraph {
-	SCGraph *graph = [[SCGraph alloc] init];
+	graph = [[SCGraph alloc] init];
 	
 	[graph addPoint: NSMakePoint(0, 0.1)];
 	[graph addPoint: NSMakePoint(10, 0.5)];
-	[graph addPoint: NSMakePoint(20, 0.1)];
-	[graph addPoint: NSMakePoint(30, 0.2)];
-	[graph addPoint: NSMakePoint(40, 0.1)];
-	[graph addPoint: NSMakePoint(50, 0.2)];
-	[graph addPoint: NSMakePoint(60, 0.1)];
+	count = 1;
 	
 	[plotCanvas addGraph: graph];
 }
+
+- (void)addPoint {
+	count += 1;
+	
+	[graph addPoint: NSMakePoint(count * 10, 0.5)];
+	[plotCanvas setNeedsDisplay:YES];
+}
+
+
+
 
 
 @end

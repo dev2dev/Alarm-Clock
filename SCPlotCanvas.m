@@ -33,7 +33,7 @@
 	NSRect rect = NSMakeRect(0, 0, [self frame].size.width, [self frame].size.height);
 
 	SC2DScale *scaler = [[[SC2DScale alloc] init] autorelease];
-	[scaler setFromRect:NSMakeRect(0, -1, 60, 2)];
+	[scaler setFromRect:NSMakeRect(0, -1, 1000, 2)];
 	[scaler setToRect: rect];
 	
 	CGContextRef myContext = [[NSGraphicsContext currentContext] graphicsPort];
@@ -42,15 +42,12 @@
     CGContextFillRect(myContext, dirtyRect);
 	
 	for (SCGraph *graph in graphs) {
-		NSLog(@"graph: %@", graph);
-
 		graph.scaler = scaler;
 		[graph draw: myContext];
 	}
 }
 
 - (void)addGraph: (SCGraph *)graph {
-
 	[graphs addObject:graph];
 	[self setNeedsDisplay:YES];
 }

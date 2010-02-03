@@ -8,12 +8,17 @@
 
 #import <Cocoa/Cocoa.h>
 @class SCPlotCanvas;
+@class SCGraph;
 
 @interface Alarm_ClockAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
+	SCGraph *graph;
 	
 	IBOutlet SCPlotCanvas *plotCanvas; 
+	
+	NSInteger count;
 }
+
 
 @property (assign) IBOutlet NSWindow *window;
 
