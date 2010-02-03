@@ -8,9 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class SCGraph;
+
 
 @interface SCPlotCanvas : NSView {
-
+	SCGraph *graph;
 }
 
 @end

@@ -15,9 +15,11 @@
 	NSMutableArray *points;
 	
 	SC2DScale *scaler;
-
 }
 
+@property (retain) SC2DScale *scaler;
+
+- (void)addPoint: (NSPoint)point;
 - (void)draw: (CGContextRef) context;
 
 

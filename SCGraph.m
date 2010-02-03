@@ -12,24 +12,15 @@
 
 @implementation SCGraph
 
+@synthesize scaler;
+
+
 - (id) init
 {
 	self = [super init];
 	if (self != nil) {
-		points = [[NSMutableArray alloc] initWithObjects:
-				  [NSValue valueWithPoint: NSMakePoint(0, 0.1)],
-				  [NSValue valueWithPoint: NSMakePoint(10, 0.5)],
-				  [NSValue valueWithPoint: NSMakePoint(20, 0.1)],
-				  [NSValue valueWithPoint: NSMakePoint(30, 0.2)],
-				  [NSValue valueWithPoint: NSMakePoint(40, 0.1)],
-				  [NSValue valueWithPoint: NSMakePoint(50, 0.2)],
-				  [NSValue valueWithPoint: NSMakePoint(40, 0.1)],
-
-				  nil];
 		
-		scaler = [[SC2DScale alloc] init];
-		[scaler setFromRect:NSMakeRect(0, -3, 100, 6)];
-		[scaler setToRect:NSMakeRect(0, 0, 400, 400)];
+		points = [[NSMutableArray alloc] init]; 
 	}
 	return self;
 }
@@ -41,6 +32,12 @@
 	
 	[super dealloc];
 }
+
+- (void)addPoint: (NSPoint)point {
+	[points addObject:[NSValue valueWithPoint: point]];
+}
+
+
 
 - (void)draw: (CGContextRef) context {
 	CGContextSetRGBStrokeColor(context, 1, 1, 1, 1);
