@@ -24,7 +24,7 @@
 @synthesize window, remoteAccel;
 
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification; {
 	[self setupGraph];
 	
 	remoteAccel = [[SCRemoteAccelerometer alloc] init];
@@ -44,8 +44,11 @@
 #pragma mark -
 #pragma mark Private Methods
 - (void)setupGraph {
+
 	graph = [[SCGraph alloc] init];
+
 	[plotCanvas addGraph: graph];
+	plotCanvas.width = 1000;
 }
 
 
@@ -56,7 +59,7 @@
 {
 	count += 1;
 	
-	[graph addPoint: NSMakePoint(count * 1, acceleration)];
+	[graph addPoint: NSMakePoint(count, acceleration)];
 }
 
 

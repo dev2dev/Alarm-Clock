@@ -40,7 +40,7 @@
 		E66EF3641114948500E9E26F /* Alarm_ClockAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alarm_ClockAppDelegate.h; path = Classes/Alarm_ClockAppDelegate.h; sourceTree = "<group>"; };
 		E66EF3651114948500E9E26F /* Alarm_ClockAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Alarm_ClockAppDelegate.m; path = Classes/Alarm_ClockAppDelegate.m; sourceTree = "<group>"; };
 		E66EF36C1114976500E9E26F /* SCPlotCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPlotCanvas.h; sourceTree = "<group>"; };
-		E66EF36D1114976500E9E26F /* SCPlotCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPlotCanvas.m; sourceTree = "<group>"; };
+		E66EF36D1114976500E9E26F /* SCPlotCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPlotCanvas.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E66EF3821114B00D00E9E26F /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66EF3831114B00D00E9E26F /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
 		E66EF3891114B09000E9E26F /* SCMapperUnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMapperUnitTest.h; sourceTree = "<group>"; };
