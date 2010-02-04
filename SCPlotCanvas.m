@@ -76,7 +76,7 @@
 		return NSMakeRect(0, 0, width, 30);
 	}
 	
-	float currentMaxWidth = [[graphs objectAtIndex:0] width];
+	float currentMaxWidth = [(SCGraph *)[graphs objectAtIndex:0] width];
 	
 	float startingValue = currentMaxWidth - width;
 	if (startingValue < 0) {
