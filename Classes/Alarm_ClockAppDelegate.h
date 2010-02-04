@@ -20,7 +20,11 @@
 	
 	IBOutlet SCPlotCanvas *plotCanvas; 
 	
+	NSMutableArray *lastAccelerations;
 	NSInteger count;
+	NSInteger activityCounter;
+	
+	NSSound *alarmSound;
 }
 @property (assign) IBOutlet NSWindow *window;
 @property (nonatomic, retain) SCRemoteAccelerometer *remoteAccel;

@@ -10,6 +10,9 @@
 #import "SCGraph.h"
 #import "SCPlotCanvas.h"
 
+#define kSleepActivityTreshold		12
+#define kActivityRecognitionCount	36000
+
 @interface Alarm_ClockAppDelegate (Private)
 
 - (void)setupGraph;
@@ -30,6 +33,11 @@
 	remoteAccel = [[SCRemoteAccelerometer alloc] init];
 	remoteAccel.delegate = self;
 	[remoteAccel startReading];
+	
+	lastAccelerations = [[NSMutableArray alloc] init];
+	activityCounter = 0;
+	
+	alarmSound = [[NSSound alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dance" ofType:@"aif"] byReference:YES];
 }
 
 - (void) dealloc
@@ -57,9 +65,26 @@
 
 - (void)remoteAccelerometer:(SCRemoteAccelerometer *)remoteAccelerometer didReceiveAcceleration:(float)acceleration
 {
-	count += 1;
+	if (lastAccelerations.count >= 20)
+		[lastAccelerations removeObjectAtIndex:0];
 	
-	[graph addPoint: NSMakePoint(count, acceleration)];
+	[lastAccelerations addObject:[NSNumber numberWithFloat:acceleration]];
+	
+	float avg = [[lastAccelerations valueForKeyPath:@"@avg.floatValue"] floatValue];
+	
+	if (avg > kSleepActivityTreshold)
+	{
+		activityCounter += 1;
+	}
+	
+	if (activityCounter > kActivityRecognitionCount)
+	{
+		alarmSound.loops = YES;
+		[alarmSound play];
+	}
+	
+	count += 1;
+	[graph addPoint: NSMakePoint(count, avg)];
 }
 
 
