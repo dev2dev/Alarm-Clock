@@ -11,7 +11,7 @@
 #import "SCPlotCanvas.h"
 
 #define kSleepActivityTreshold		12
-#define kActivityRecognitionCount	36000
+#define kActivityRecognitionCount	600
 
 @interface Alarm_ClockAppDelegate (Private)
 
@@ -81,10 +81,17 @@
 	{
 		alarmSound.loops = YES;
 		[alarmSound play];
+		activityCounter = 0;
 	}
 	
 	count += 1;
 	[graph addPoint: NSMakePoint(count, avg)];
+}
+
+
+- (void)remoteAccelerometerDidReceiveButtonDown:(SCRemoteAccelerometer *)remoteAccelerometer
+{
+	[alarmSound stop];
 }
 
 
