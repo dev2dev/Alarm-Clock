@@ -7,19 +7,22 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SCRemoteAccelerometer.h"
+
 @class SCPlotCanvas;
 @class SCGraph;
 
-@interface Alarm_ClockAppDelegate : NSObject <NSApplicationDelegate> {
+@interface Alarm_ClockAppDelegate : NSObject <NSApplicationDelegate, SCRemoteAccelrometerDelegate> {
     NSWindow *window;
+	SCRemoteAccelerometer *remoteAccel;
+	
 	SCGraph *graph;
 	
 	IBOutlet SCPlotCanvas *plotCanvas; 
 	
 	NSInteger count;
 }
-
-
 @property (assign) IBOutlet NSWindow *window;
+@property (nonatomic, retain) SCRemoteAccelerometer *remoteAccel;
 
 @end

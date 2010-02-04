@@ -11,6 +11,7 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		AA6C58D41119B3C200D02F93 /* SCRemoteAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C58D31119B3C200D02F93 /* SCRemoteAccelerometer.m */; };
 		E66EF3661114948500E9E26F /* Alarm_ClockAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E66EF3651114948500E9E26F /* Alarm_ClockAppDelegate.m */; };
 		E66EF36E1114976500E9E26F /* SCPlotCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = E66EF36D1114976500E9E26F /* SCPlotCanvas.m */; };
 		E66EF38B1114B09000E9E26F /* SCMapperUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E66EF38A1114B09000E9E26F /* SCMapperUnitTest.m */; };
@@ -34,10 +35,12 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Alarm_Clock-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Alarm_Clock-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Alarm-Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alarm-Clock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA6C58D21119B3C200D02F93 /* SCRemoteAccelerometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRemoteAccelerometer.h; sourceTree = "<group>"; };
+		AA6C58D31119B3C200D02F93 /* SCRemoteAccelerometer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRemoteAccelerometer.m; sourceTree = "<group>"; };
 		E66EF3641114948500E9E26F /* Alarm_ClockAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alarm_ClockAppDelegate.h; path = Classes/Alarm_ClockAppDelegate.h; sourceTree = "<group>"; };
 		E66EF3651114948500E9E26F /* Alarm_ClockAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Alarm_ClockAppDelegate.m; path = Classes/Alarm_ClockAppDelegate.m; sourceTree = "<group>"; };
 		E66EF36C1114976500E9E26F /* SCPlotCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPlotCanvas.h; sourceTree = "<group>"; };
-		E66EF36D1114976500E9E26F /* SCPlotCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPlotCanvas.m; sourceTree = "<group>"; };
+		E66EF36D1114976500E9E26F /* SCPlotCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPlotCanvas.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E66EF3821114B00D00E9E26F /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66EF3831114B00D00E9E26F /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
 		E66EF3891114B09000E9E26F /* SCMapperUnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMapperUnitTest.h; sourceTree = "<group>"; };
@@ -155,6 +158,8 @@
 		E66EF369111494EC00E9E26F /* SCRemoteAccelerometer */ = {
 			isa = PBXGroup;
 			children = (
+				AA6C58D21119B3C200D02F93 /* SCRemoteAccelerometer.h */,
+				AA6C58D31119B3C200D02F93 /* SCRemoteAccelerometer.m */,
 			);
 			name = SCRemoteAccelerometer;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				E66EF3941114DFEF00E9E26F /* SCScale.m in Sources */,
 				E66EF3BC1114ED9200E9E26F /* SC2DScale.m in Sources */,
 				E66EF3FE1115009200E9E26F /* SCGraph.m in Sources */,
+				AA6C58D41119B3C200D02F93 /* SCRemoteAccelerometer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

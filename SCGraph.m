@@ -45,6 +45,10 @@
 }
 
 - (void)draw: (CGContextRef) context {
+	if ([points count] == 0) {
+		return;
+	}
+	
 	[self removePastPoints];
 	
 	CGContextSetRGBStrokeColor(context, 1, 1, 1, 1);
