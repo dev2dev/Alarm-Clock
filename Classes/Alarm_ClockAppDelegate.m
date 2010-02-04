@@ -58,6 +58,7 @@
 - (void)remoteAccelerometer:(SCRemoteAccelerometer *)remoteAccelerometer didReceiveAcceleration:(float)acceleration
 {
 	count += 1;
+	
 	[graph addPoint: NSMakePoint(count, acceleration)];
 }
 

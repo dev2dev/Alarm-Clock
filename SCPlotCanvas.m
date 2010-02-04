@@ -73,7 +73,7 @@
 
 - (NSRect)valueRangeRect {
 	if ([graphs count] == 0) {
-		return NSMakeRect(0, -1, width, 2);
+		return NSMakeRect(0, -100, width, 200);
 	}
 	
 	float currentMaxWidth = [(SCGraph *)[graphs objectAtIndex:0] width];
@@ -83,7 +83,7 @@
 		startingValue = 0;
 	}
 	
-	return NSMakeRect(startingValue, -1, width, 2);
+	return NSMakeRect(startingValue, -100, width, 200);
 }
 			   
 - (void)observeValueForKeyPath:(NSString *)keyPath
