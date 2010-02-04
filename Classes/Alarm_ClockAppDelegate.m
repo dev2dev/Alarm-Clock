@@ -27,8 +27,6 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	[self setupGraph];
 	
-	[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(addPoint) userInfo:nil repeats:YES]; 
-	
 	remoteAccel = [[SCRemoteAccelerometer alloc] init];
 	remoteAccel.delegate = self;
 	[remoteAccel startReading];
@@ -58,7 +56,7 @@
 {
 	count += 1;
 	
-	[graph addPoint: NSMakePoint(count * 10, acceleration)];
+	[graph addPoint: NSMakePoint(count * 1, acceleration)];
 }
 
 
