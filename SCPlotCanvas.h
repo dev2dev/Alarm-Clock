@@ -13,7 +13,10 @@
 
 @interface SCPlotCanvas : NSView {
 	NSMutableArray *graphs;
+	
+	float width;
 }
+@property (assign) float width;
 
 - (void)addGraph: (SCGraph *)graph;
 

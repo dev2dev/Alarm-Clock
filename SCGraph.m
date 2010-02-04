@@ -9,6 +9,13 @@
 #import "SCGraph.h"
 #import "SC2DScale.h"
 
+@interface SCGraph ()
+
+- (BOOL)isValidPoint: (NSPoint) point;
+- (void)removePastPoints;
+
+@end
+
 
 @implementation SCGraph
 
@@ -38,6 +45,8 @@
 }
 
 - (void)draw: (CGContextRef) context {
+	[self removePastPoints];
+	
 	CGContextSetRGBStrokeColor(context, 1, 1, 1, 1);
 
 	CGContextBeginPath(context);
@@ -46,16 +55,50 @@
 	CGContextMoveToPoint(context, point.x, point.y);
 
 	for (int i = 1; i < [points count]; i++) {
-		point = [[points objectAtIndex:i] pointValue];
-		point = [scaler scaleValue:point];
-
-		CGContextAddLineToPoint(context, point.x, point.y);
+		NSPoint point = [[points objectAtIndex:i] pointValue];
+		
+		if ([self isValidPoint: point]) {
+			point = [scaler scaleValue:point];
+			CGContextAddLineToPoint(context, point.x, point.y);			
+		}
 	}
 	
 	CGContextStrokePath(context);
-
 	self.dirty = NO;
 }
+	
+- (float)width {
+	return [[points lastObject] pointValue].x; 
+}
+
+#pragma mark -
+#pragma mark Private Methods
+
+- (BOOL)isValidPoint: (NSPoint) point {
+	if (point.x < scaler.fromRect.origin.x) {
+		return NO;
+	}
+	
+	return YES;
+}
+
+- (void)removePastPoints 
+{
+	if ([points count] < 3) {
+		return;
+	}
+	
+	for (int i = 1; i < [points count]; i++) {
+		if (![self isValidPoint: [[points objectAtIndex:i] pointValue]]) {
+			[points removeObjectAtIndex:0];
+		} else {
+			return;
+		}
+	}
+}
+
+
+
 
 
 @end

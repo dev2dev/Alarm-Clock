@@ -13,17 +13,18 @@
 @interface SCPlotCanvas (Private)
 
 - (void)graphChanged;
+- (NSRect)valueRangeRect;
 
 @end
 
-
-
 @implementation SCPlotCanvas
+@synthesize width;
 
 - (id)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
 		graphs = [[NSMutableArray alloc] init];
+		width = 1000;
 	}
 
     return self;
@@ -32,16 +33,13 @@
 - (void) dealloc
 {
 	[graphs release];
-
 	[super dealloc];
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
-	NSRect rect = NSMakeRect(0, 0, [self frame].size.width, [self frame].size.height);
-
 	SC2DScale *scaler = [[[SC2DScale alloc] init] autorelease];
-	[scaler setFromRect:NSMakeRect(0, -1, 1000, 2)];
-	[scaler setToRect: rect];
+	[scaler setFromRect: [self valueRangeRect]];	
+	[scaler setToRect: [self bounds]];
 	
 	CGContextRef myContext = [[NSGraphicsContext currentContext] graphicsPort];
 	
@@ -60,7 +58,6 @@
 
 	graph.dirty = NO;
 
-	
 	[graphs addObject:graph];	
 	[self graphChanged];
 }
@@ -74,6 +71,22 @@
 
 }
 
+- (NSRect)valueRangeRect {
+	if ([graphs count] == 0) {
+		return NSMakeRect(0, -1, width, 2);
+	}
+	
+	
+	float currentMaxWidth = [[graphs objectAtIndex:0] width];
+	
+	float startingValue = currentMaxWidth - width;
+	if (startingValue < 0) {
+		startingValue = 0;
+	}
+	
+	return NSMakeRect(startingValue, -1, width, 2);
+}
+			   
 - (void)observeValueForKeyPath:(NSString *)keyPath
 					  ofObject:(id)object
                         change:(NSDictionary *)change

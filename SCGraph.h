@@ -13,13 +13,13 @@
 
 @interface SCGraph : NSObject {
 	NSMutableArray *points;
-	
 	SC2DScale *scaler;
-	
+		
 	BOOL dirty;
 }
 
 @property (retain) SC2DScale *scaler;
+@property (readonly) float width;
 @property (assign) BOOL dirty;
 
 - (void)addPoint: (NSPoint)point;

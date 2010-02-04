@@ -24,10 +24,10 @@
 @synthesize window;
 
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification; {
 	[self setupGraph];
 	
-	[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(addPoint) userInfo:nil repeats:YES]; 
+	[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(addPoint) userInfo:nil repeats:YES]; 
 }
 
 - (void) dealloc
@@ -42,19 +42,20 @@
 #pragma mark -
 #pragma mark Private Methods
 - (void)setupGraph {
-	graph = [[SCGraph alloc] init];
-	
+	graph = [[SCGraph alloc] init];	
 	[graph addPoint: NSMakePoint(0, 0.1)];
 	[graph addPoint: NSMakePoint(10, 0.5)];
 	count = 1;
 	
 	[plotCanvas addGraph: graph];
+	plotCanvas.width = 1000;
 }
 
 - (void)addPoint {
 	count += 1;
 	
-	[graph addPoint: NSMakePoint(count * 10, 0.5)];
+	float random = (rand() % 200) - 100;
+	[graph addPoint: NSMakePoint(count * 10, random / 200.0f)];
 }
 
 
