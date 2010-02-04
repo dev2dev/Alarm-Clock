@@ -19,10 +19,16 @@
 	SCGraph *graph;
 	
 	IBOutlet SCPlotCanvas *plotCanvas; 
+	IBOutlet NSDatePicker *wackupTimePicker;
 	
 	NSInteger count;
+	
+	NSTimer *monitoringTimer;
 }
 @property (assign) IBOutlet NSWindow *window;
 @property (nonatomic, retain) SCRemoteAccelerometer *remoteAccel;
+@property (retain) NSTimer *monitoringTimer;
+
+- (IBAction)timeChanged: (id)sender;
 
 @end
