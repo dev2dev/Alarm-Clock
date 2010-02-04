@@ -16,6 +16,7 @@
 @optional
 
 - (void)remoteAccelerometer:(SCRemoteAccelerometer *)remoteAccelerometer didReceiveAcceleration:(float)acceleration;
+- (void)remoteAccelerometerDidReceiveButtonDown:(SCRemoteAccelerometer *)remoteAccelerometer;
 
 @end
 

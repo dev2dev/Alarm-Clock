@@ -21,9 +21,13 @@
 	IBOutlet SCPlotCanvas *plotCanvas; 
 	IBOutlet NSDatePicker *wackupTimePicker;
 	
+	NSMutableArray *lastAccelerations;
 	NSInteger count;
 	
+	BOOL isMonitoring;
 	NSTimer *monitoringTimer;
+	NSInteger activityCounter;
+	NSSound *alarmSound;
 }
 @property (assign) IBOutlet NSWindow *window;
 @property (nonatomic, retain) SCRemoteAccelerometer *remoteAccel;

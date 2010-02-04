@@ -60,7 +60,12 @@
 	{
 		NSString *message = [self readUntilCharacter:'\n'];
 		//NSLog(@"%@", message);
-		if ([delegate respondsToSelector:@selector(remoteAccelerometer:didReceiveAcceleration:)]) 
+		if ([message floatValue] == -1)
+		{
+			if ([delegate respondsToSelector:@selector(remoteAccelerometerDidReceiveButtonDown:)]) 
+				[delegate remoteAccelerometerDidReceiveButtonDown:self];
+		}
+		else if ([delegate respondsToSelector:@selector(remoteAccelerometer:didReceiveAcceleration:)])
 			[delegate remoteAccelerometer:self didReceiveAcceleration:[message floatValue]];
 	}
 	
