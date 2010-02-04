@@ -53,6 +53,9 @@
 }
 
 - (IBAction)timeChanged: (id)sender {
+	isMonitoring = NO;
+	activityCounter = 0;
+	
 	[self.monitoringTimer invalidate];
 	
 	NSDate *wakeupTime = [wackupTimePicker dateValue];
