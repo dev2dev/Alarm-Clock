@@ -43,7 +43,7 @@
 	
 	CGContextRef myContext = [[NSGraphicsContext currentContext] graphicsPort];
 	
-	CGContextSetRGBFillColor(myContext, 0, 0, 0, 1);
+	CGContextSetRGBFillColor(myContext, 1, 1, 1, 1);
     CGContextFillRect(myContext, dirtyRect);
 	
 	for (SCGraph *graph in graphs) {

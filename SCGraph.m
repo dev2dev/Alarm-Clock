@@ -51,7 +51,7 @@
 	
 	[self removePastPoints];
 	
-	CGContextSetRGBStrokeColor(context, 1, 1, 1, 1);
+	CGContextSetRGBStrokeColor(context, 0, 0, 0, 1);
 
 	CGContextBeginPath(context);
 	NSPoint point = [[points objectAtIndex:0] pointValue];
